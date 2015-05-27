@@ -15,5 +15,6 @@
 
 void	ft_bzero(char *str, int len);
 int		ft_isdigit(int c);
+int		ft_strlen(const char *s);
 
 #endif
