@@ -6,7 +6,7 @@
 #    By: abarbaro <abarbaro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/11 15:42:41 by abarbaro          #+#    #+#              #
-#    Updated: 2015/05/26 02:57:07 by abarbaro         ###   ########.fr        #
+#    Updated: 2015/05/27 05:57:16 by abarbaro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 
 CC =			~/.brew/bin/nasm
 
-CFLAG =			-f macho64 --prefix _
+CFLAG =			-f macho64
 
 NAME =			libfts.a
 
@@ -28,7 +28,7 @@ SRC_NAME =		$(shell ls $(SRC_PATH) | grep "\.s")
 
 OBJ_NAME =		$(SRC_NAME:.s=.o)
 
-INC_NAME =		libftasm.h
+INC_NAME =		libfts.h
 
 SRC =			$(addprefix $(SRC_PATH),$(SRC_NAME))
 
@@ -50,7 +50,7 @@ $(OBJ_PATH)%.o:	$(SRC_PATH)%.s
 				@$(CC) $(CFLAG) -I$(INC_PATH)  $< -o $@
 
 clean:
-				@rm -f $(OBJ)
+				@rm -rf $(OBJ_PATH)
 				@echo "clean done"
 fclean:			
 				@rm -f $(OBJ)
