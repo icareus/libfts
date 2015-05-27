@@ -14,4 +14,6 @@ int		main(int ac, char **av)
 	write(1, "Flush buffer -> end of isdigit\n", strlen("Flush buffer -> end of isdigit") + 1);
 	printf("strlen(av[0]) : %ld\nft_strlen() : %d\n",
 		strlen(av[0]), ft_strlen(av[0]));
+	printf("strlen(av[1]) : %ld\nft_strlen() : %d\n",
+		strlen(av[1]), ft_strlen(av[1]));
 }

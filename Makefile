@@ -6,7 +6,7 @@
 #    By: abarbaro <abarbaro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/11 15:42:41 by abarbaro          #+#    #+#              #
-#    Updated: 2015/05/27 05:57:16 by abarbaro         ###   ########.fr        #
+#    Updated: 2015/05/27 17:16:55 by abarbaro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,5 +56,12 @@ fclean:
 				@rm -f $(OBJ)
 				@rm -f $(NAME)
 				@echo "fclean done"
+				@rm -f test.out
 
-re: 			fclean all
+re: 			fclean tclean all
+
+test:			$(NAME)
+				gcc -Wall -Wextra -Werror test.c -I$(INC_PATH) -L. -lfts\
+				-o test.out
+				./test.out "Lorem ipsum"
+				./test.out "1orem ipsum"
