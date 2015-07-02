@@ -6,7 +6,7 @@
 #    By: abarbaro <abarbaro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/11 15:42:41 by abarbaro          #+#    #+#              #
-#    Updated: 2015/05/27 17:16:55 by abarbaro         ###   ########.fr        #
+#    Updated: 2015/07/02 19:11:40 by abarbaro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,7 @@ fclean:
 				@echo "fclean done"
 				@rm -f test.out
 
-re: 			fclean tclean all
+re: 			fclean all
 
 test:			$(NAME)
 				gcc -Wall -Wextra -Werror test.c -I$(INC_PATH) -L. -lfts\
