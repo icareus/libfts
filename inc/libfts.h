@@ -13,8 +13,10 @@
 #ifndef	_LIBFTS_H_
 # define	_LIBFTS_H_
 
-void	ft_bzero(char *str, int len);
 int		ft_isdigit(int c);
 int		ft_strlen(const char *s);
+void	ft_bzero(char *str, int len);
+void	*ft_memcpy(void *dst, void *src, int n);
+void	*ft_memset(void *b, int c, int len);
 
 #endif
