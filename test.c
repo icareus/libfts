@@ -33,4 +33,15 @@ int		main(int ac, char **av)
 	mem = ft_strdup(av[0]);
 	printf("ft_strdup(av[0]) : %s\n", mem);
 	printf("ft_strdup's return : %p\n", mem);
+	printf("ft_isalpha('a') : %s\n", ft_isalpha('a') ? "TRUE" : "FALSE");
+	printf("ft_isalpha('z') : %s\n", ft_isalpha('z') ? "TRUE" : "FALSE");
+	printf("ft_isalpha('A') : %s\n", ft_isalpha('A') ? "TRUE" : "FALSE");
+	printf("ft_isalpha('Z') : %s\n", ft_isalpha('Z') ? "TRUE" : "FALSE");
+	printf("ft_isalpha(' ') : %s\n", ft_isdigit(' ') ? "TRUE" : "FALSE");
+	printf("\nft_isalnum(' ') : %s\n", ft_isalnum(' ') ? "TRUE" : "FALSE");
+	printf("ft_isalnum('a') : %s\n", ft_isalnum('a') ? "TRUE" : "FALSE");
+	printf("ft_isalnum('1') : %s\n", ft_isalnum('1') ? "TRUE" : "FALSE");
+	printf("ft_isalnum('z') : %s\n", ft_isalnum('z') ? "TRUE" : "FALSE");
+	printf("ft_isalnum('A') : %s\n", ft_isalnum('A') ? "TRUE" : "FALSE");
+	printf("ft_isalnum('Z') : %s\n", ft_isalnum('Z') ? "TRUE" : "FALSE");
 }

@@ -14,7 +14,10 @@
 # define	_LIBFTS_H_
 
 char	*ft_strdup(char *str);
+int		ft_isalpha(int c);
+int		ft_isalnum(int c);
 int		ft_isdigit(int c);
+int		ft_isprint(int c);
 int		ft_strlen(const char *s);
 void	ft_bzero(char *str, int len);
 void	*ft_memcpy(void *dst, void *src, int n);
