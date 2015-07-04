@@ -6,13 +6,14 @@ section .text
 
 _ft_memcpy:
 		cmp		rdi, 0		; if (dest == NULL)
-		je		exit
+		je		end
+		push	rdi
 		cmp		rsi, 0
-		je		exit
+		je		end
 		mov		rcx, rdx	; set counter
 		cld
 		rep		movsb
 
-exit:
-	mov rax, rdi
+end:
+	pop rax
 	ret

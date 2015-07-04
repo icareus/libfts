@@ -18,19 +18,14 @@ _ft_strdup:
 	push	rax			; save len									#STACK
 	mov		rdi, rax	; ready to pass len to malloc + 1 for nullterm
 	call	_malloc
-	cmp		rax, 0		; if(ret == NULL)
-	je		badalloc
 	mov		rdi, rax	; dst
 	pop		rdx			; len
 	pop		rsi			; src
+	cmp		rdi, 0
+	je		end
 	call	_ft_memcpy
 
 end:
-	mov		rsp, rbp
+	; mov		rsp, rbp
 	pop		rbp
 	ret
-
-badalloc:
-	pop		rdx
-	pop		rsi
-	jmp		end
