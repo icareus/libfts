@@ -19,6 +19,8 @@ int		ft_isalnum(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
 int		ft_strlen(const char *s);
+int		ft_tolower(int c);
+int		ft_toupper(int c);
 void	ft_bzero(char *str, int len);
 void	*ft_memcpy(void *dst, void *src, int n);
 void	*ft_memset(void *b, int c, int len);

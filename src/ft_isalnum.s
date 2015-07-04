@@ -8,7 +8,6 @@ _ft_isalnum:
 	cmp		rax, 1
 	je		end
 	call	_ft_isdigit
-	cmp		rax, 1
 
 end:
 	ret

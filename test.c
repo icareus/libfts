@@ -12,14 +12,8 @@ int		main(int ac, char **av)
 
 	if (ac != 2)
 		return (0);
-	printf("Tests en cours : ft_isdigit.\n\n");
-	printf("Pour %c :\nstd -> %d\nlft -> %d\n",
-		av[1][0], isdigit(av[1][0]), ft_isdigit(*av[1]));
-	write(1, "Flush buffer -> end of isdigit\n", strlen("Flush buffer -> end of isdigit") + 1);
 	printf("strlen(av[0]) : %ld\nft_strlen() : %d\n",
 		strlen(av[0]), ft_strlen(av[0]));
-	printf("strlen(av[1]) : %ld\nft_strlen() : %d\n",
-		strlen(av[1]), ft_strlen(av[1]));
 	printf("memset(mem, 'a', 32) : %.32s\n", mem);
 	ft_memset(mem, 'b', 32);
 	printf("ft_memset(mem, 'b', 32) : %.32s\n", mem);
@@ -31,8 +25,7 @@ int		main(int ac, char **av)
 	mem = strdup(av[0]);
 	printf("strdup(av[0]) : %s\n", mem);
 	mem = ft_strdup(av[0]);
-	printf("ft_strdup(av[0]) : %s\n", mem);
-	printf("ft_strdup's return : %p\n", mem);
+	printf("ft_strdup(av[0]) : %s\n\n", mem);
 	printf("ft_isalpha('a') : %s\n", ft_isalpha('a') ? "TRUE" : "FALSE");
 	printf("ft_isalpha('z') : %s\n", ft_isalpha('z') ? "TRUE" : "FALSE");
 	printf("ft_isalpha('A') : %s\n", ft_isalpha('A') ? "TRUE" : "FALSE");
@@ -44,4 +37,12 @@ int		main(int ac, char **av)
 	printf("ft_isalnum('z') : %s\n", ft_isalnum('z') ? "TRUE" : "FALSE");
 	printf("ft_isalnum('A') : %s\n", ft_isalnum('A') ? "TRUE" : "FALSE");
 	printf("ft_isalnum('Z') : %s\n", ft_isalnum('Z') ? "TRUE" : "FALSE");
+	printf("ft_isdigit('a') : %s\n", ft_isdigit('a') ? "TRUE" : "FALSE");
+	printf("ft_isdigit('0') : %s\n", ft_isdigit('0') ? "TRUE" : "FALSE");
+	printf("ft_toupper('0') : %c\n", ft_toupper('0'));
+	printf("ft_toupper('a') : %c\n", ft_toupper('a'));
+	printf("ft_toupper('A') : %c\n", ft_toupper('A'));
+	printf("ft_tolower('0') : %c\n", ft_tolower('0'));
+	printf("ft_tolower('a') : %c\n", ft_tolower('a'));
+	printf("ft_tolower('A') : %c\n", ft_tolower('A'));
 }
