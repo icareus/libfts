@@ -15,6 +15,7 @@ global		_ft_strlen
 section		.text
 
 _ft_strlen:
+	push	rdi
 	xor		rax, rax		;AL = 0, to look for null-termination
 	xor		rcx, rcx		;RCX = 0
 	dec		rcx				;RCX = -1 or max value
@@ -22,4 +23,5 @@ _ft_strlen:
 	not		rcx
 	dec		rcx
 	mov		rax, rcx
+	pop		rdi
 	ret

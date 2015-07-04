@@ -13,6 +13,7 @@
 #ifndef	_LIBFTS_H_
 # define	_LIBFTS_H_
 
+char	*ft_strcat(char *s1, char *s2);
 char	*ft_strdup(char *str);
 int		ft_isalpha(int c);
 int		ft_isalnum(int c);

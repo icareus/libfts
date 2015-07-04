@@ -20,12 +20,15 @@ int		main(int ac, char **av)
 	memcpy(mem, "Lorem ipsum dolor sit amet, id.", 32);
 	printf("memcpy(mem, 'Lorem ipsum dolor sit amet, id.', 32) : %s\n", mem);
 	ft_memcpy(mem, "Porem ipsum dolor sit amet, to.", 32);
-	printf("ft_memcpy(mem, 'Porem ipsum dolor sit amet, to.', 32) : %s\n", mem);
+	printf("ft_memcpy(mem, 'Porem ipsum dolor sit amet, to.', 32) : %s\n\n", mem);
 
+	free(mem);
 	mem = strdup(av[0]);
 	printf("strdup(av[0]) : %s\n", mem);
+	free(mem);
 	mem = ft_strdup(av[0]);
 	printf("ft_strdup(av[0]) : %s\n\n", mem);
+
 	printf("ft_isalpha('a') : %s\n", ft_isalpha('a') ? "TRUE" : "FALSE");
 	printf("ft_isalpha('z') : %s\n", ft_isalpha('z') ? "TRUE" : "FALSE");
 	printf("ft_isalpha('A') : %s\n", ft_isalpha('A') ? "TRUE" : "FALSE");
@@ -44,5 +47,12 @@ int		main(int ac, char **av)
 	printf("ft_toupper('A') : %c\n", ft_toupper('A'));
 	printf("ft_tolower('0') : %c\n", ft_tolower('0'));
 	printf("ft_tolower('a') : %c\n", ft_tolower('a'));
-	printf("ft_tolower('A') : %c\n", ft_tolower('A'));
+	printf("ft_tolower('A') : %c\n\n", ft_tolower('A'));
+
+	free(mem);
+	mem = malloc(sizeof(char) * 10);
+	ft_bzero(mem, 10);
+	ft_memcpy(mem, "toto", 5);
+	ft_strcat(mem, " tutu");
+	printf("strcat(\"toto\", \" tutu\")%s\n", mem);
 }
