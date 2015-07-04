@@ -21,10 +21,16 @@ int		main(int ac, char **av)
 	printf("strlen(av[1]) : %ld\nft_strlen() : %d\n",
 		strlen(av[1]), ft_strlen(av[1]));
 	printf("memset(mem, 'a', 32) : %.32s\n", mem);
-	ft_memset(mem, 'a', 32);
-	printf("ft_memset(mem, 'a', 32) : %.32s\n", mem);
-	memcpy(mem, "Lorem ipsum dolor sit amet, id.", 32);
-	printf("memcpy(mem, 'Lorem ipsum dolor sit amet, id.', 32) : %s\n", mem);
+	ft_memset(mem, 'b', 32);
+	printf("ft_memset(mem, 'b', 32) : %.32s\n", mem);
+	memcpy(mem, "Igweqzf zwer zagtwqq tyqhu, do!", 32);
+	printf("memcpy(mem, \"Igweqzf zwer zagtwqq tyqhu, do!\", 32) : %s\n", mem);
 	ft_memcpy(mem, "Lorem ipsum dolor sit amet, id.", 32);
 	printf("ft_memcpy(mem, 'Lorem ipsum dolor sit amet, id.', 32) : %s\n", mem);
+
+	mem = strdup(av[0]);
+	printf("strdup(av[0]) : %s\n", mem);
+	mem = ft_strdup(av[0]);
+	// write(1, mem, 32);
+	printf("ft_strdup(av[0]) : %s\n", mem);
 }

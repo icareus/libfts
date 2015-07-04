@@ -1,23 +1,36 @@
 ;char *ft_strdup(char *str)
-extern	_ft_memcpy
-extern	_ft_strlen
-extern	_malloc
 
 section .text
-		global _ft_strdup
+	global	_ft_strdup
+	extern	_ft_memcpy
+	extern	_ft_strlen
+	extern	_malloc
 
 _ft_strdup:
-		xor		rax, rax
-		cmp		rdi, 0		; if (src == NULL)
-		je		exit
-		call	_ft_strlen	; get length of string rdi in rax
-		mov		r12, rdi	; save arg
-		mov		rdi, rax + 1; ready to pass len to malloc + 1 for nullterm
-		call	_malloc
-		mov		rcx, rdi
-		mov		rdi, rax
-		mov		rsi, r12
-		rep		movsb
+	push	rbp			;											#STACK
+	mov		rbp, rsp
+	xor		rax, rax
+	cmp		rdi, 0		; if (src == NULL)
+	je		end
+	push	rdi			; save str									#STACK
+	call	_ft_strlen	; get length of string rdi in rax
+	inc		rax
+	push	rax			; save len									#STACK
+	mov		rdi, rax	; ready to pass len to malloc + 1 for nullterm
+	call	_malloc
+	cmp		rax, 0		; if(ret == NULL)
+	je		badalloc
+	mov		rdi, rax	; dst
+	pop		rdx			; len
+	pop		rsi			; src
+	call	_ft_memcpy
 
-exit:
+end:
+	mov		rsp, rbp
+	pop		rbp
 	ret
+
+badalloc:
+	pop		rdx
+	pop		rsi
+	jmp		end

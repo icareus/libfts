@@ -6,11 +6,13 @@
 #    By: abarbaro <abarbaro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/11 15:42:41 by abarbaro          #+#    #+#              #
-#    Updated: 2015/07/02 19:11:40 by abarbaro         ###   ########.fr        #
+#    Updated: 2015/07/03 20:17:59 by abarbaro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY:			all, clean, fclean, re
+
+PKG =			~/.brew/bin/brew
 
 CC =			~/.brew/bin/nasm
 
@@ -43,7 +45,8 @@ $(NAME):		$(OBJ)
 				@echo "$@ created"
 
 $(CC):
-				~/.brew/bin/brew install nasm
+				$(PKG) update
+				$(PKG) install nasm
 
 $(OBJ_PATH)%.o:	$(SRC_PATH)%.s
 				@mkdir -p $(OBJ_PATH)

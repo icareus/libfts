@@ -15,7 +15,7 @@ global		_ft_strlen
 section		.text
 
 _ft_strlen:
-	xor		al, al			;AL = 0, to look for null-termination
+	xor		rax, rax		;AL = 0, to look for null-termination
 	xor		rcx, rcx		;RCX = 0
 	dec		rcx				;RCX = -1 or max value
 	repne	scasb			;while RCX && byte[rdi] != AL, RCX--
