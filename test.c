@@ -54,5 +54,19 @@ int		main(int ac, char **av)
 	ft_bzero(mem, 10);
 	ft_memcpy(mem, "toto", 5);
 	ft_strcat(mem, " tutu");
-	printf("strcat(\"toto\", \" tutu\")%s\n", mem);
+	printf("strcat(\"toto\", \" tutu\")%s\n\n", mem);
+
+	printf("puts(mem) : ");
+	fflush(stdout);
+	puts(mem);
+	printf("\nft_puts(mem) : ");
+	fflush(stdout);
+	ft_puts(mem);
+	printf("\n");
+	printf("puts('Lorem ipsum') : ");
+	fflush(stdout);
+	puts("Lorem ipsum");
+	printf("ft_puts('Lipsum Orem') : ");
+	fflush(stdout);
+	ft_puts("Lipsum Orem");
 }
