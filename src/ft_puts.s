@@ -9,8 +9,8 @@ extern		_ft_strlen
 
 section		.data
 null:
-	.string	db	"(null)"
-	.len	equ	$ - null.string
+	.string db "(null)"
+	.len equ $-null.string
 endl:
 	.string	db	0xA
 
@@ -32,7 +32,7 @@ _ft_puts:
 
 .void:
 	mov		rdi, STDOUT
-	lea		rsi, [rel null.string]
+	lea		rsi, [rel null]
 	mov		rdx, null.len
 	mov		rax, MACH_SYSCALL(WRITE)
 	syscall
