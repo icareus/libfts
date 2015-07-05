@@ -8,9 +8,9 @@ _ft_isalpha:
 	cmp		rdi, 'z'
 	jg		end
 	cmp		rdi, 'Z'
-	jl		true
+	jle		true
 	cmp		rdi, 'a'
-	jg		true
+	jl		end
 
 true:
 	mov		rax, 1
