@@ -17,13 +17,14 @@ section .text
 		global _ft_memset
 
 _ft_memset:
-		cmp		rdi, 0		; if (dest == NULL)
-		je		exit
-		mov		rcx, rdx	; set counter
-		mov		rax, rsi	; set src word
-		cld
-		rep		stosb
+	push	rdi
+	cmp		rdx, 0
+	jle		exit
+	mov		rcx, rdx	; set counter
+	mov		rax, rsi	; set src word
+	cld
+	rep		stosb
 
 exit:
-	mov rax, rdi
+	pop		rax
 	ret
