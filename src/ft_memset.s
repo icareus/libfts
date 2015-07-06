@@ -14,7 +14,7 @@
 ; RDI = dest, RSI = src_set, len = RDX
 
 section .text
-		global _ft_memset
+	global _ft_memset
 
 _ft_memset:
 	push	rdi
