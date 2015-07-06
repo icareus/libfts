@@ -10,9 +10,10 @@ extern		_ft_strlen
 section		.data
 null:
 	.string db "(null)"
-	.len equ $-null.string
-endl:
-	.string	db	0xA
+	.len equ $-null.string 			; string lenght
+
+section		.bss
+	endl:	resb	0x1
 
 section		.text
 
@@ -32,11 +33,11 @@ _ft_puts:
 
 .void:
 	mov		rdi, STDOUT
-	lea		rsi, [rel null]
+	lea		rsi, [rel null.string]
 	mov		rdx, null.len
 	mov		rax, MACH_SYSCALL(WRITE)
 	syscall
-	ret
+	jmp		.endl
 
 .error:
 	mov		rax, EOF
@@ -44,7 +45,10 @@ _ft_puts:
 
 .endl:
 	mov		rdi, STDOUT
-	lea		rsi, [rel endl.string]
+	mov		rsi, 0xA
+	lea		r10, [rel endl]
+	mov		[r10], rsi
+	mov		rsi, r10
 	mov		rdx, 1
 	mov		rax, MACH_SYSCALL(WRITE)
 	syscall
